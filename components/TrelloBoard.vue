@@ -51,7 +51,9 @@ const alt = useKeyModifier("Alt");
             item-key="id"
           >
             <template #item="{ element: task }: { element: Task }">
-              <TrelloBoardTask :task="task" />
+              <div>
+                <TrelloBoardTask :task="task" />
+              </div>
             </template>
           </draggable>
 
