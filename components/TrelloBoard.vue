@@ -2,7 +2,7 @@
 import type { Column, Task } from "~~/types";
 import draggable from "vuedraggable";
 import { nanoid } from "nanoid";
-const columns = ref<Column[]>([
+const columns = useLocalStorage<Column[]>("trelloBoard", [
   {
     title: "Backlog",
     id: nanoid(),
@@ -26,6 +26,16 @@ const columns = ref<Column[]>([
   { title: "Complete", id: nanoid(), tasks: [] },
 ]);
 const alt = useKeyModifier("Alt");
+
+watch(
+  columns,
+  () => {
+    // ajax requst
+  },
+  {
+    deep: true,
+  }
+);
 
 function createColumn() {
   const column: Column = {
