@@ -22,9 +22,14 @@ onKeyStroke("Backspace", (e) => {
     tabindex="0"
   >
     <DragHandle class="pr-2" />
-    <span>
-      {{ task.title }}
-    </span>
+    <div>
+      <div>
+        {{ task.title }}
+      </div>
+      <div class="text-xs text-gray-500">
+        {{ task.createdAt.toLocaleString() }}
+      </div>
+    </div>
   </div>
 </template>
 <style>
